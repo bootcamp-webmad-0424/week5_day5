@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        const person = {
+            firsName: 'German',
+            lastName: 'Álvarez',
+            celiac: false,
+            height: 1.89,
+            favDrink: 'Monster Mango Loco Ultra Fiesta Party',
+            occupation: {
+                position: 'Lead Teacher',
+                company: 'Ironhack',
+                active: true
+            },
+            birth: new Date(1986, 23, 4),
+            hobbies: ['Ski', 'Gadgets', 'Rave'],
+            subscriptions: [
+                {
+                    service: 'Spotify',
+                    cost: 9.99
+                },
+                {
+                    service: 'HBO',
+                    cost: 12.99
+                }
+            ]
+        }
+
+
+        // Type
+        console.log('El tipo de un objeto es', typeof person)
+
+        // Memory
+        const object1 = {}
+        const object2 = {}
+        console.log('Los objetos generan siempre puntos únicos de memoria', object1 === object2)
+
+        // Access (getter)
+        console.log('La persona se llama', person.firsName, person.lastName)
+
+        // Access (alternative getter)
+        console.log('Los corchetes también permiten el acceso a claves:', person['favDrink'])
+
+        // Access (setter)
+        person.occupation.position = 'Senior LT'
+        console.log('Ahora tengo este puesto:', person.occupation)
+
+
+
+
+        // in operator
+        console.log(`¿La persona tiene edad?`, 'age' in person)
+
+        // keys method
+        console.log('Las claves del objeto son:', Object.keys(person))
+
+        // values method
+        console.log('Las claves del objeto son:', Object.values(person))
+
+
+
+        // Exercise
+
+        let totalCost = 0
+
+        person.subscriptions.forEach(function (eachSubscription) {
+
+            console.log('Esto es un coste ->', eachSubscription.cost)
+
+            const serviceCost = eachSubscription.cost
+            totalCost += serviceCost
+        })
+
+        console.log('El coste total es', totalCost, '€')
+
+
+    </script>
+</body>
+
+</html>
